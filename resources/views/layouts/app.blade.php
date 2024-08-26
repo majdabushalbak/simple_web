@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,45 +9,12 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
     <style>
-        /* Navbar Styles */
-        .navbar {
-            background-color: rgb(0, 0, 0);
-            position: relative;
-        }
-
-        .navbar-brand {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .navbar-brand img {
-            max-height: 50px;
-            /* Adjust the logo size */
-        }
-
-        .navbar-nav {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .navbar-nav.ms-auto {
-            margin-left: 0;
-        }
-
-        .navbar-nav.me-auto {
-            margin-right: 0;
-        }
-
-        .navbar-nav.ms-auto .nav-link {
-            margin-left: 15px;
-            /* Space between links */
-        }
-
-        .navbar-nav.me-auto .nav-link {
-            margin-right: 15px;
-            /* Space between links */
+        body {
+            font-family: "Readex Pro", Arial, Helvetica, sans-serif;
         }
 
         .container {
@@ -92,20 +60,7 @@
             /* Slightly smaller text for the footer */
         }
 
-        /* Navbar Styles */
-        .navbar {
-            background-color: rgb(0, 0, 0);
-        }
 
-        .navbar-brand,
-        .nav-link {
-            color: #eaeaea !important;
-        }
-
-        .navbar-brand:hover,
-        .nav-link:hover {
-            color: #f9f9f9 !important;
-        }
 
         /* Container Padding */
         .container {
@@ -116,11 +71,7 @@
             /* Align text in the container to the right */
         }
 
-        /* Logo Image */
-        .navbar-brand img {
-            max-height: 50px;
-            /* Adjust the logo size */
-        }
+
 
         footer .social-media-links {
             margin: 10px 0;
@@ -152,6 +103,10 @@
             /* Center align the card content */
         }
 
+        .card:hover {
+            cursor: pointer;
+        }
+
         /* Circular Image with Fixed Size */
         .card-img-top {
             width: 150px;
@@ -165,14 +120,40 @@
             margin-top: 15px;
             /* Add some margin to separate from the card edges */
         }
+
+        /* Logo Image */
+        .navbar-brand img {
+            max-height: 15dvh;
+            /* Adjust the logo size */
+        }
+
+        nav {
+            background-color: #000000;
+        }
+
+        .nav-link {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ffffff;
+            border-width: 0 0 0.5rem 0;
+            border-style: solid;
+            border-color: #000;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+            border-width: 0 0 0.5rem 0;
+            border-style: solid;
+            border-color: #ffffff;
+        }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg border-bottom" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{ URL('images/Logo.png') }}" alt="Logo">
+                <img src="{{ URL('storage/Logo.png') }}" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
