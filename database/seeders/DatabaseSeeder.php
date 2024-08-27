@@ -4,7 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+//to Run the SEEDER
+//     ------------------------------------
+//    | php artisan migrate:refresh --seed |
+//     ------------------------------------
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -12,7 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call([AdminSeeder::class]);
+        $this->call([AdminSeeder::class, CategoriesSeeder::class]);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
