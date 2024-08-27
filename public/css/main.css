@@ -1,0 +1,97 @@
+body {
+    font-family: "Readex Pro", Arial, Helvetica, sans-serif;
+}
+
+.container {
+    flex: 1;
+    padding-top: 70px;
+    padding-bottom: 120px;
+    text-align: right;
+    /* Align text in the container to the right */
+}
+
+footer {
+    background-color: rgb(0, 0, 0);
+    color: #eaeaea;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    justify-content: center;
+    /* Center items vertically */
+    align-items: center;
+    /* Center items horizontally */
+}
+
+.footer-links {
+    margin-bottom: 10px;
+    /* Space between links and text */
+}
+
+.footer-links a {
+    color: #eaeaea;
+    margin: 0 10px;
+    /* Space between links */
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #f9f9f9;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    /* Slightly smaller text for the footer */
+}
+
+/* Container Padding */
+.container {
+    flex: 1;
+    padding-top: 70px;
+    padding-bottom: 120px;
+    text-align: right;
+    /* Align text in the container to the right */
+}
+
+footer .social-media-links {
+    margin: 10px 0;
+    /* Space above and below the social media links */
+}
+
+footer .social-media-links a {
+    color: #eaeaea;
+    font-size: 1.5rem;
+    /* Adjust the size of the icons */
+    text-decoration: none;
+}
+
+footer .social-media-links a:hover {
+    color: #f9f9f9;
+}
+
+/* Logo Image */
+.navbar-brand img {
+    max-height: 15dvh;
+    /* Adjust the logo size */
+}
+
+nav {
+    background-color: #000000;
+}
+
+.nav-link {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ffffff;
+    border-width: 0 0 0.5rem 0;
+    border-style: solid;
+    border-color: #000;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    border-width: 0 0 0.5rem 0;
+    border-style: solid;
+    border-color: #ffffff;
+}
