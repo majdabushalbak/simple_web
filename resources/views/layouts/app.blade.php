@@ -19,8 +19,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg border-bottom" data-bs-theme="dark">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg pb-0" data-bs-theme="dark">
+        <div class="container-fluid align-items-end">
             <a class="navbar-brand" href="{{ route('home') }}">
                 <img src="{{ URL('storage/Logo.png') }}" alt="Logo">
             </a>
@@ -52,7 +52,7 @@
                         </li> --}}
                     @endauth
                 </ul>
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-0">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('products.index') }}">المنتجات</a>
                     </li>

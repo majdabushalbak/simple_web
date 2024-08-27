@@ -73,23 +73,31 @@ footer .social-media-links a:hover {
 /* Logo Image */
 .navbar-brand img {
     max-height: 15dvh;
+    min-height: 70px;
     /* Adjust the logo size */
 }
-
+ul.navbar-nav {
+    width: 50vw;
+}
 nav {
     background-color: #000000;
 }
 
 .nav-link {
+    height: 10dvh;
+    min-height: 70px;
     font-size: 1.3rem;
     font-weight: bold;
     color: #ffffff;
-    border-width: 0 0 0.5rem 0;
-    border-style: solid;
-    border-color: #000;
+    box-sizing: border-box;
+    border: none;
+    transition-property: border;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
 }
 
 .nav-link:hover {
+    box-sizing: border-box;
     color: #ffffff;
     border-width: 0 0 0.5rem 0;
     border-style: solid;
