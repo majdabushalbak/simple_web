@@ -1,6 +1,6 @@
 <link href="{{   asset('css/products-page.css') }}" rel="stylesheet">
 
-<div class="card h-100" onclick="location.href='{{ route('products.show', $product) }}'">
+<div class="card h-100 flex-grow-1" onclick="location.href='{{ route('products.show', $product) }}'">
     <!-- Image with fixed size -->
     <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
         class="card-img-top">

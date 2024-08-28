@@ -7,7 +7,7 @@
     </div>
 
     <!-- Product Content Section -->
-    <div class="product-content">
+    <div class="product-content ">
         <!-- Add Product Button -->
         <div class="mb-4 d-flex justify-content-start">
             @if (Auth::check() && Auth::user()->role === 1)
@@ -18,7 +18,7 @@
         <!-- Category Filter Buttons -->
         <div class="mb-4">
             <h4>الفئات:</h4>
-            <div class="btn-group" role="group" aria-label="Categories">
+            <div class="" role="group" aria-label="Categories">
                 <!-- All Products Button -->
                 <a href="{{ route('products.index') }}"
                     class="btn btn-dark {{ !$selectedCategory ? 'active' : '' }} mx-1">الكل</a>
@@ -35,7 +35,7 @@
         @if ($products->isEmpty())
             <p>لا توجد منتجات لهذه الفئة.</p>
         @else
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 ">
                 @foreach ($products as $product)
                     <div class="col">
                   <x-products.card :product="$product"/>

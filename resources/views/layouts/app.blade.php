@@ -69,7 +69,8 @@
         </div>
     </nav>
 
-    <div class="container mt-5">
+    {{-- page content--}}
+    <div class="page-container mx-4 mx-lg-5 mt-5">
         @yield('content')
     </div>
 
