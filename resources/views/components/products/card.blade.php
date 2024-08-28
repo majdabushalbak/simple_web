@@ -1,12 +1,12 @@
 <link href="{{   asset('css/products-page.css') }}" rel="stylesheet">
 
-<div class="card h-100 flex-grow-1" onclick="location.href='{{ route('products.show', $product) }}'">
+<div class="card text-center h-100 flex-grow-1" onclick="location.href='{{ route('products.show', $product) }}'">
     <!-- Image with fixed size -->
     <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
         class="card-img-top">
     <div class="card-body">
-        <h5 class="card-title">{{ $product->name }}</h5>
-        <p class="card-text"><strong>السعر:</strong> ${{ $product->price }}</p>
+        <h5 class="card-title mb-4">{{ $product->name }}</h5>
+        <p class="card-text"> <i class="fa-solid fa-shekel-sign"></i> {{ $product->price }}</p>
         <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
 

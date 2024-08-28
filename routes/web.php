@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 
+use App\Models\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,6 +54,18 @@ Route::middleware(['admin'])->group(function () {
     Route::put('categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
     Route::delete('categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
 });
+Route::get('/debug-login', function () {
+    $user = User::where('email', 'admin@example.com')->first();
 
+    if ($user) {
+        if (Hash::check('password123', $user->password)) {
+            return 'Password matches';
+        } else {
+            return 'Password does not match';
+        }
+    } else {
+        return 'User not found';
+    }
+});
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

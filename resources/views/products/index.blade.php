@@ -16,8 +16,8 @@
         </div>
 
         <!-- Category Filter Buttons -->
-        <div class="mb-4">
-            <h4>الفئات:</h4>
+        <div class="mb-5">
+            
             <div class="" role="group" aria-label="Categories">
                 <!-- All Products Button -->
                 <a href="{{ route('products.index') }}"
