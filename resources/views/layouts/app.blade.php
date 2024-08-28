@@ -22,7 +22,8 @@
     <nav class="navbar navbar-expand-lg pb-0" data-bs-theme="dark">
         <div class="container-fluid align-items-end">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{ URL('storage/Logo.png') }}" alt="Logo">
+                <img src="{{ URL('storage/Logo.svg') }}" alt="Logo">
+                <h1 style="display: inline-block ">محمص المجد</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
