@@ -71,14 +71,14 @@
     </nav>
 
     {{-- page content--}}
-    <div class="page-container mx-4 mx-lg-5 mt-5">
+    <div class="page-container  mx-4 mx-lg-5 mt-5">
         @yield('content')
     </div>
 
 
 
 
-    <footer class="text-center">
+    <footer class="text-center mt-5">
         <div class="footer-links">
             <a href="{{ route('products.index') }}">المنتجات</a>
             @if (auth()->check() && auth()->user()->role === 1)

@@ -3,21 +3,21 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container text-end">
-    <div class="row">
-        <div class="col-6">
+<div class="  text-end">
+    <div class="row flex-wrap-reverse justify-content-between align-items-center">
+        <div class=" align-self-end col-12 col-lg-6">
             <h1>{{ $product->name }}</h1>
-            <br>
+            
             <hr>
             <p class="description">{{ $product->description }}</p>
             <p><b>Price:</b> ${{ $product->price }}</p>
             <br><br>
-            <a href="{{ route('products.index') }}" class="btn btn-primary">Back to Products</a>
+            <a href="{{ route('products.index') }}" class="btn btn-dark">Back to Products</a>
         </div> 
 
-        <div class="col-4 ">
+        <div class="col-12  col-lg-5 mb-5">
             @if ($product->image)
-                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="product-img img-fluid">
+                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="product-img img-fluid ">
             @else
                 <p>No image available</p>
             @endif

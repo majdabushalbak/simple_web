@@ -18,22 +18,22 @@
         <!-- Category Filter Buttons -->
         <div class="mb-5">
             
-            <div class="" role="group" aria-label="Categories">
+            <div class="d-flex flex-wrap" role="group" aria-label="Categories">
                 <!-- All Products Button -->
-                <a href="{{ route('products.index') }}"
-                    class="btn btn-dark {{ !$selectedCategory ? 'active' : '' }} mx-1">الكل</a>
+                <a style="border-radius: 0" href="{{ route('products.index') }}"
+                    class="btn btn-dark {{ !$selectedCategory ? 'active' : '' }} m-1">الكل</a>
 
                 <!-- Category Buttons -->
                 @foreach ($categories as $category)
-                    <a href="{{ route('products.index', ['category_id' => $category->id]) }}"
-                        class="btn btn-dark {{ $selectedCategory == $category->id ? 'active' : '' }} mx-1">{{ $category->name }}</a>
+                    <a style="border-radius: 0" href="{{ route('products.index', ['category_id' => $category->id]) }}"
+                        class="btn btn-dark {{ $selectedCategory == $category->id ? 'active' : '' }} m-1">{{ $category->name }}</a>
                 @endforeach
             </div>
         </div>
 
         <!-- Product Cards -->
         @if ($products->isEmpty())
-            <p>لا توجد منتجات لهذه الفئة.</p>
+           <div class="d-flex justify-content-center  " > <h2 class="my-5 ">لا توجد منتجات لهذه الفئة.</h2></div>
         @else
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 ">
                 @foreach ($products as $product)

@@ -8,14 +8,9 @@
 
 body {
     font-family: "Readex Pro", Arial, Helvetica, sans-serif;
-}
-
-.container {
-    flex: 1;
-    padding-top: 70px;
-    padding-bottom: 120px;
-    text-align: right;
-    /* Align text in the container to the right */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 footer {
@@ -113,4 +108,5 @@ nav {
 }
 
 .page-container {
+    flex: 1;
 }
