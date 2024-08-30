@@ -6,9 +6,9 @@
         class="card-img-top">
     <div class="card-body">
         <h5 class="card-title mb-4">{{ $product->name }}</h5>
-        <p class="card-text"> <i class="fa-solid fa-shekel-sign"></i> {{ $product->price }}</p>
+        <p class="card-text">{{ $product->price }} <i class="fa-solid fa-shekel-sign"></i> </p>
         <div class="d-flex justify-content-between align-items-center">
-            <div class="">
+            <div class="mx-auto">
 
                 @if (Auth::check() && Auth::user()->role === 1)
                     <a href="{{ route('products.edit', $product) }}"
