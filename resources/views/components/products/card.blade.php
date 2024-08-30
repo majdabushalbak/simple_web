@@ -8,16 +8,16 @@
         <h5 class="card-title mb-4">{{ $product->name }}</h5>
         <p class="card-text"> <i class="fa-solid fa-shekel-sign"></i> {{ $product->price }}</p>
         <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
+            <div class="">
 
                 @if (Auth::check() && Auth::user()->role === 1)
                     <a href="{{ route('products.edit', $product) }}"
-                        class="btn btn-sm btn-outline-dark">تعديل</a>
+                        class="btn btn-sm btn-outline-dark corner">تعديل</a>
                     <form action="{{ route('products.destroy', $product) }}" method="POST"
                         class="d-inline">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-sm btn-outline-dark"
+                        <button type="submit" class="btn btn-sm btn-outline-danger corner"
                             onclick="return confirm('هل أنت متأكد أنك تريد حذف هذا المنتج؟')">حذف</button>
                     </form>
                 @endif

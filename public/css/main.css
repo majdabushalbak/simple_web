@@ -4,6 +4,7 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 :root {
     --gold: #f2bb3d;
+    --gold-lite: hsl(42, 87%, 63%);
 }
 
 body {
@@ -109,4 +110,20 @@ nav {
 
 .page-container {
     flex: 1;
+}
+.corner {
+    border-radius: 0;
+}
+.btn-gold {
+    border-radius: 0;
+    color: white;
+    background-color: var(--gold);
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+}
+
+.btn-gold:hover {
+    background-color: var(--gold-lite);
+    color: white;
 }

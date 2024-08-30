@@ -11,7 +11,7 @@
         <!-- Add Product Button -->
         <div class="mb-4 d-flex justify-content-start">
             @if (Auth::check() && Auth::user()->role === 1)
-                <a href="{{ route('products.create') }}" class="btn btn-success">إضافة منتج جديد</a>
+                <a href="{{ route('products.create') }}"  class="btn btn-gold">إضافة منتج جديد</a>
             @endif
         </div>
 
