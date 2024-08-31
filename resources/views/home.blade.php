@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'الصفحة الرئيسية - مشروع Laravel')
+@section('title', 'الصفحة الرئيسية')
 
 @section('content')
     <div class="container">

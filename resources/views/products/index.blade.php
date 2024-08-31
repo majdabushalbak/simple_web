@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'المنتجات')
 @section('content')
     <!-- Full-Page Background Image -->
     <div class="background-image-container">

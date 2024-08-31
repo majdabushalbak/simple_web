@@ -118,12 +118,16 @@ nav {
     border-radius: 0;
     color: white;
     background-color: var(--gold);
-    transition-property: background-color;
-    transition-duration: 0.1s;
-    transition-timing-function: ease-in;
 }
 
 .btn-gold:hover {
     background-color: var(--gold-lite);
-    color: white;
+}
+
+li .user {
+    cursor: pointer;
+    color: #ffffff;
+}
+li .user:hover {
+    color: var(--gold);
 }
