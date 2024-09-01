@@ -1,4 +1,4 @@
-<link href="{{   asset('css/products-page.css') }}" rel="stylesheet">
+
 
 <div class="card text-center h-100 flex-grow-1" onclick="location.href='{{ route('products.show', $product) }}'">
     <!-- Image with fixed size -->
