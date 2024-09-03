@@ -92,28 +92,58 @@
 
 
 
-    <footer class="text-center mt-5">
-        <div class="footer-links">
-            <a href="{{ route('products.index') }}">المنتجات</a>
-            @if (auth()->check() && auth()->user()->role === 1)
-                <a href="{{ route('categories.index') }}">الفئات</a>
-            @endif
-            <a href="{{ route('aboutus') }}">من نحن</a>
-        </div>
-        <div class="social-media-links">
-            <a href="https://www.tiktok.com/yourprofile" target="_blank" class="me-3">
-                <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://www.facebook.com/yourprofile" target="_blank" class="me-3">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/yourprofile" target="_blank" class="me-3">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </div>
-        {{-- <div class="container">
-            <span>© {{ date('Y') }} مشروع Laravel. جميع الحقوق محفوظة.</span>
-        </div> --}}
+    <footer class="px-5 mt-5  w-100    ">
+
+    <div class="w-75 d-flex flex-column flex-lg-row justify-content-between align-items-start align-self-start gap-5  ">
+        
+                <div class="d-flex flex-column justify-content-end align-items-start ">
+                    <a class="navbar-brand d-flex align-items-end" href="{{ route('home') }}">
+                        <img src="{{ URL('/images/Logo.svg') }}" alt="Logo"/>
+                        <p class="d-inline-block m-0 mx-3 "style="font-size:4.5rem">النّور</p>
+                    </a>
+                    
+                    <span class="copy-right mt-2 text-end"> جميع الحقوق محفوظة لموقع Copyright Alnour © {{ date('Y') }}</span>
+                </div>
+        
+                <div class="d-flex flex-column  social-media-links align-items-start ">
+        
+                   <div>
+                    <h4 class="text-start mb-3">تابعونا على</h4>
+                    <h5 class="mb-3  text-start">alnour.ps@</h5>
+                        <a href="https://www.tiktok.com/@anour.ps?_t=8pJQrG0wzJJ&_r=1" target="_blank" class="">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61559961010130&mibextid=LQQJ4d" target="_blank" class="me-3">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/alnour.ps/" target="_blank" class="me-3">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                   </div>
+                </div>
+        
+                <div class="d-flex flex-column footer-links align-items-start ">
+                    <h4 class="mb-3">الأقسام</h4>
+                    <a class="" href="{{ route('products.index') }}">المنتجات</a>
+                    @if (auth()->check() && auth()->user()->role === 1)
+                        <a class="mt-2" href="{{ route('categories.index') }}">الفئات</a>
+                    @endif
+                    <a class="mt-2" href="{{ route('aboutus') }}">من نحن</a>
+                </div>
+        
+        
+                
+                <div class="d-flex flex-column align-items-start ">
+                    <h4 class="mb-3">اتصل بنا</h4>
+                    <span class="   "><b>هاتف: </b><span dir="ltr" >+970-599-927-273</span>  </span>
+                  
+                    <span class="  mt-2 text-end">  <b>العنوان:</b> رام الله ، بيتونيا </span>
+                </div>
+                
+              
+    </div>
+           
+
     </footer>
 
     <!-- Bootstrap JS -->

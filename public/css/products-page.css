@@ -50,7 +50,7 @@
     top: 0;
     height: 100%;
     width: 120px;
-    display: flex;
+    display: none;
     align-items: center;
 }
 
@@ -72,7 +72,7 @@
     height: 55px;
     width: 55px;
     line-height: 55px;
-    font-size: 1.2rem;
+    font-size: 2rem;
 
     border-radius: 50%;
     text-align: center;
@@ -120,11 +120,11 @@
 .tabs-box .tab.active {
     color: #fff;
     background: var(--gold);
-    border: transparent;
+    border: 1px solid transparent;
 }
 
 .tabs-box .tab:hover {
     color: #fff;
     background: var(--gold-lite);
-    border: transparent;
+    border: 1px solid var(--gold);
 }

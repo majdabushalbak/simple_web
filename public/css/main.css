@@ -1,20 +1,22 @@
 :root {
     --gold: #f2bb3d;
-    --gold-lite: hsl(42, 87%, 63%);
+    --gold-lite: hsl(42, 87%, 70%);
 }
 
 body {
     font-family: "Readex Pro", Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 footer {
+    min-height: 50dvh;
     background-color: rgb(0, 0, 0);
     color: #eaeaea;
     padding: 20px 0;
     text-align: center;
+    white-space: nowrap;
     display: flex;
     flex-direction: column;
     /* Stack items vertically */
@@ -45,23 +47,22 @@ footer {
     /* Slightly smaller text for the footer */
 }
 
-/* Container Padding */
-.container {
-    flex: 1;
-    padding-top: 70px;
-    padding-bottom: 120px;
-    text-align: right;
-    /* Align text in the container to the right */
+span.copy-right {
+    opacity: 0.3;
+    font-size: 0.9rem;
 }
 
 footer .social-media-links {
-    margin: 10px 0;
     /* Space above and below the social media links */
+}
+footer .text {
+    font-size: 0.9rem;
+    font-weight: 400;
 }
 
 footer .social-media-links a {
     color: #eaeaea;
-    font-size: 1.5rem;
+    font-size: 2rem;
     /* Adjust the size of the icons */
     text-decoration: none;
 }
@@ -105,7 +106,7 @@ nav {
 }
 
 .page-container {
-    flex: 1;
+    min-height: 70dvh;
 }
 .corner {
     border-radius: 0;
