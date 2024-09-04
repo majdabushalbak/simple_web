@@ -5,6 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="نحن شركة فلسطينية
+تهدف إلى تقديم منتجات غذائية صحية ولذيذة من مكونات محلية عالية الجودة. نؤمن بأهمية دعم المنتجات الفلسطينية والارتقاء بها إلى أعلى المعايير العالمية.">
     <title>Alnour -  @yield('title')</title>
     <link rel="icon" type="image/x-icon" href="/images/Logo.svg">
     <!-- Bootstrap CSS -->
@@ -20,54 +22,55 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg pb-0" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-xl pb-0" data-bs-theme="dark">
         <div class="container-fluid align-items-end">
-            <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
+            <a class="navbar-brand d-flex align-items-center mb-5 mb-xl-0" href="{{ route('home') }}">
                 <img src="{{ URL('/images/Logo.svg') }}" alt="Logo"/>
                 <p class="d-inline-block m-0 mx-3 "style="font-size:4.5rem">النّور</p>
             </a>
+           <div class=" ms-auto">
+                <ul >
+                    @auth
+                       @if (Auth::user()->role === 1)
+                   <div class="dropdown">
+                       <button class=" btn-gold dropdown-toggle px-2 py-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           {{ Auth::user()->name }}
+                       </button>
+                       <ul class="dropdown-menu px-4 py-3 mt-3 corner ">
+                         
+                    
+                           <li class="d-block w-100 " onclick="location.href='{{ route('home') }}'">
+                               <p class="fs-5 text-nowrap  text-center  corner user" >{{ Auth::user()->name }}</p>
+                           </li>
+                           <li class="">
+                               <hr/>
+                       @endif
+                       <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                           @csrf
+                           <button type="submit" class="btn  btn-danger corner text-nowrap ">تسجيل الخروج</button>
+                       </form>
+                       </li>
+                  
+                      </ul> </div>
+                   @endauth
+    
+                       
+                    
+                     
+                  
+               </ul>
+           </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span ><i class="fa-solid fa-bars"></i></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                     @auth
-                        @if (Auth::user()->role === 1)
-                    <div class="dropdown">
-                        <button class=" btn-gold dropdown-toggle px-2 py-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ Auth::user()->name }}
-                        </button>
-                        <ul class="dropdown-menu px-4 py-3 mt-3 corner  ">
-                          
-                     
-                            <li class="d-block w-100 " onclick="location.href='{{ route('home') }}'">
-                                <p class="fs-5 text-nowrap  text-center  corner user" >{{ Auth::user()->name }}</p>
-                            </li>
-                            <li class="">
-                                <hr/>
-                        @endif
-                        <form method="POST" action="{{ route('logout') }}" class="d-inline">
-                            @csrf
-                            <button type="submit" class="btn  btn-danger corner text-nowrap ">تسجيل الخروج</button>
-                        </form>
-                        </li>
-                    @else
-                        {{-- Uncomment if needed for guest links --}}
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">تسجيل الدخول</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">تسجيل</a>
-                        </li> --}}
-                    @endauth
-
-                        </ul>
-                      </div>
-                      
-                   
-                </ul>
-                <ul class="navbar-nav ms-0">
+            
+            <div class="collapse navbar-collapse  " id="navbarNav">
+                
+                <ul class="navbar-nav mx-auto gap-0 gap-xl-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('home') }}">الصفحة الرئيسية</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('products.index') }}">المنتجات</a>
                     </li>
@@ -92,7 +95,7 @@
 
 
 
-    <footer class="px-5 mt-5  w-100    ">
+    <footer class="px-4 px-lg-5 mt-5  w-100    ">
 
     <div class="w-75 d-flex flex-column flex-lg-row justify-content-between align-items-start align-self-start gap-5  ">
         

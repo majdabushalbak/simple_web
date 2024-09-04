@@ -48,8 +48,8 @@ footer {
 }
 
 span.copy-right {
-    opacity: 0.3;
-    font-size: 0.9rem;
+    opacity: 0.35;
+    font-size: 0.8rem;
 }
 
 footer .social-media-links {
@@ -78,7 +78,7 @@ footer .social-media-links a:hover {
     /* Adjust the logo size */
 }
 ul.navbar-nav {
-    width: 50%;
+    width: auto;
 }
 nav {
     background-color: #000000;
@@ -87,7 +87,9 @@ nav {
 .nav-link {
     height: 10dvh;
     min-height: 70px;
+
     font-size: 1.3rem;
+    white-space: nowrap;
     font-weight: bold;
     color: #ffffff;
     box-sizing: border-box;
@@ -105,6 +107,17 @@ nav {
     border-color: #ffffff;
 }
 
+button.navbar-toggler {
+    box-shadow: none !important;
+    border: none;
+}
+button.navbar-toggler span {
+    color: #ffffff !important;
+    font-size: 2.5rem;
+}
+button.navbar-toggler span:hover {
+    color: var(--gold) !important;
+}
 .page-container {
     min-height: 70dvh;
 }
@@ -118,6 +131,7 @@ nav {
 }
 
 .btn-gold:hover {
+    color: white;
     background-color: var(--gold-lite);
 }
 
@@ -127,4 +141,8 @@ li .user {
 }
 li .user:hover {
     color: var(--gold);
+}
+
+ul.dropdown-menu {
+    left: -32px !important;
 }

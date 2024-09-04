@@ -1,0 +1,130 @@
+.card {
+    width: auto;
+    /* Set a fixed width for the card */
+    border: none;
+    border-radius: 0px;
+    padding: 10px;
+
+    overflow: hidden;
+    background: white;
+
+    /*box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;*/
+    border: 1px solid rgba(99, 99, 99, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center align the card content */
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/* Circular Image with Fixed Size */
+.card-img-top {
+    /* Set a fixed height for the image */
+    border-radius: 0%;
+    /* Make the image circular */
+    object-fit: cover;
+    /* Ensure the image covers the area without stretching */
+
+    /* Add some margin to separate from the card edges */
+}
+
+/* categories slider*/
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+    background: #fff;
+    max-width: 100%;
+    border-radius: 0px;
+    overflow-x: hidden;
+    padding: 35px;
+}
+
+.wrapper .icon {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 120px;
+    display: none;
+    align-items: center;
+}
+
+.icon:first-child {
+    left: 0;
+    justify-content: flex-end;
+    background: linear-gradient(90deg, hsla(0, 0%, 100%, 0.7) 75%, transparent);
+}
+.icon:last-child {
+    right: 0;
+    background: linear-gradient(
+        -90deg,
+        hsla(0, 0%, 100%, 0.7) 75%,
+        transparent
+    );
+}
+.icon i {
+    cursor: pointer;
+    height: 55px;
+    width: 55px;
+    line-height: 55px;
+    font-size: 2rem;
+
+    border-radius: 50%;
+    text-align: center;
+}
+.icon i:hover {
+    color: var(--gold);
+}
+
+.icon:first-child i {
+    margin-left: 15px;
+}
+.icon:last-child i {
+    margin-right: 15px;
+}
+
+.wrapper .tabs-box {
+    margin: 0;
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.tabs-box.dragging {
+    scroll-behavior: auto;
+    cursor: grab;
+}
+
+.tabs-box .tab {
+    cursor: pointer;
+    font-size: 1.18rem;
+    white-space: nowrap;
+    background: #f5f4fd;
+    border: 1px solid #d8d5f2;
+    padding: 13px 20px;
+    border-radius: 0px;
+    user-select: none;
+}
+
+.tabs-box.dragging .tab {
+    cursor: grab;
+    pointer-events: none;
+}
+
+.tabs-box .tab.active {
+    color: #fff;
+    background: var(--gold);
+    border: 1px solid transparent;
+}
+
+.tabs-box .tab:hover {
+    color: #fff;
+    background: var(--gold-lite);
+    border: 1px solid var(--gold);
+}
