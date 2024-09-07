@@ -1,6 +1,7 @@
 @extends('layouts.app')
-
+@section('title', 'المنتجات')
 @section('content')
+<link href="{{   asset('css/products-page.css') }}" rel="stylesheet">
     <!-- Full-Page Background Image -->
     <div class="background-image-container">
         <!-- Optional content for background overlay can go here -->
@@ -11,24 +12,17 @@
         <!-- Add Product Button -->
         <div class="mb-4 d-flex justify-content-start">
             @if (Auth::check() && Auth::user()->role === 1)
-                <a href="{{ route('products.create') }}"  class="btn btn-gold">إضافة منتج جديد</a>
+                <a href="{{ route('products.create') }}" style=" margin: 0px 10px;" class="btn btn-gold">إضافة منتج جديد</a>
             @endif
         </div>
 
         <!-- Category Filter Buttons -->
-        <div class="mb-5">
-            
-            <div class="d-flex flex-wrap" role="group" aria-label="Categories">
-                <!-- All Products Button -->
-                <a style="border-radius: 0" href="{{ route('products.index') }}"
-                    class="btn btn-dark {{ !$selectedCategory ? 'active' : '' }} m-1">الكل</a>
-
-                <!-- Category Buttons -->
-                @foreach ($categories as $category)
-                    <a style="border-radius: 0" href="{{ route('products.index', ['category_id' => $category->id]) }}"
-                        class="btn btn-dark {{ $selectedCategory == $category->id ? 'active' : '' }} m-1">{{ $category->name }}</a>
-                @endforeach
-            </div>
+        <div class="  mb-5" >
+            @if($categories->isEmpty())
+            <div class="d-flex justify-content-center" > <h2 class="my-5 ">لا توجد فئات.</h2></div>
+                @else
+                <x-products.categories-slider :categories="$categories" :selectedCategory="$selectedCategory"/>
+                @endif
         </div>
 
         <!-- Product Cards -->
@@ -44,4 +38,4 @@
             </div>
         @endif
     </div>
-@endsection
+ @endsection
