@@ -14,15 +14,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
     <link href="{{   asset('css/main.css') }}" rel="stylesheet">
 
-    
-   
+
+
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg pb-0" data-bs-theme="dark">
         <div class="container-fluid align-items-end">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{ URL('storage/Logo.svg') }}" alt="Logo"/>
+                <img src="{{ asset('storage/Screenshot 2024-08-18 201603.png') }}" alt="Logo"/>
                 <h1 style="display: inline-block ">محمص المجد</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

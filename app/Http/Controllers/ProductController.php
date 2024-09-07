@@ -44,9 +44,9 @@ public function create()
         ]);
 
         // Store the image in storage/app/public directory
-        $image = $request->file('image');
-        $imageName = $image->hashName(); // Generate a unique name for the image
-        $image->storeAs('public', $imageName);
+            $image = $request->file('image');
+            $imageName = $image->hashName(); // Generate a unique name for the image
+            $image->storeAs('public', $imageName);
 
         // Save the product to the database
         $product = Product::create([
