@@ -33,32 +33,30 @@ public function create()
 
     return view('products.create', compact('categories'));
 }
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'price' => 'required|numeric',
-            'category_id' => 'required|exists:categories,id',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image upload
-        ]);
+public function store(Request $request)
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'description' => 'required|string',
+        'price' => 'required|numeric',
+        'category_id' => 'required|exists:categories,id',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image upload
+    ]);
 
-        // Store the image in storage/app/public directory
-            $image = $request->file('image');
-            $imageName = $image->hashName(); // Generate a unique name for the image
-            $image->storeAs('public', $imageName);
+    // Store the image in the 'images' folder inside 'storage/app/public'
+    $image = $request->file('image');
+    $imagePath = $image->store('images', 'public'); // This will store the image in 'storage/app/public/images'
+    // Save the product to the database
+    $product = Product::create([
+        'name' => $request->name,
+        'description' => $request->description,
+        'price' => $request->price,
+        'category_id' => $request->category_id, // Assign category_id from form data
+        'image' => $imagePath, // Save the image path in the 'image' column
+    ]);
 
-        // Save the product to the database
-        $product = Product::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'price' => $request->price,
-            'category_id' => $request->category_id, // Assign category_id from form data
-            'image' => $imageName, // Save the image name or path in the 'image' column
-        ]);
-
-        return redirect()->route('products.index')->with('success', 'Product created successfully.');
-    }
+    return redirect()->route('products.index')->with('success', 'Product created successfully.');
+}
 
     public function show(Product $product)
     {
