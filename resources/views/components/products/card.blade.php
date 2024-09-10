@@ -1,11 +1,12 @@
 
 
-<div class="card text-center h-100 flex-grow-1" onclick="location.href='{{ route('products.show', $product) }}'">
+<div class="card text-center h-100 flex-grow-1 border-light" onclick="location.href='{{ route('products.show', $product) }}'">
     <!-- Image with fixed size -->
-    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"class="card-img-top">
-    <div class="card-body">
+    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
+        class="card-img-top border-light">
+    <div class="card-body d-flex flex-column justify-content-end align-items-center">
         <h5 class="card-title mb-4">{{ $product->name }}</h5>
-        <p class="card-text">{{ $product->price }} <i class="fa-solid fa-shekel-sign"></i> </p>
+        <p class="card-text ">{{ $product->price }} <i class="fa-solid fa-shekel-sign"></i> </p>
         <div class="d-flex justify-content-between align-items-center">
             <div class="mx-auto">
 
