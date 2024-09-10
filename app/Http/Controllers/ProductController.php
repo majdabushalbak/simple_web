@@ -43,15 +43,16 @@ public function store(Request $request)
         'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image upload
     ]);
 
-    // Store the image in the 'images' folder inside 'storage/app/public'
+    // Store the image in the 'public/storage/images' directory
     $image = $request->file('image');
-    $imagePath = $image->store('images', 'public'); // This will store the image in 'storage/app/public/images'
+    $imagePath = $image->storeAs('images', $image->hashName(), 'public'); // Save in 'public/storage/images'
+
     // Save the product to the database
     $product = Product::create([
         'name' => $request->name,
         'description' => $request->description,
         'price' => $request->price,
-        'category_id' => $request->category_id, // Assign category_id from form data
+        'category_id' => $request->category_id,
         'image' => $imagePath, // Save the image path in the 'image' column
     ]);
 
@@ -83,25 +84,23 @@ public function update(Request $request, Product $product)
     // Handle image upload
     if ($request->hasFile('image')) {
         $image = $request->file('image');
-        $imageName = $image->hashName(); // Generate a unique name for the image
-        $image->storeAs('public', $imageName);
+        $imagePath = $image->storeAs('images', $image->hashName(), 'public'); // Store in 'public/storage/images'
 
-        // Delete old image if exists
+        // Delete the old image if it exists
         if ($product->image && $product->image !== 'default.jpg') {
-            Storage::delete('public/images/' . $product->image);
+            Storage::delete('public/' . $product->image);
         }
 
-        $product->image = $imageName;
+        $product->image = $imagePath; // Update the image path
     }
 
     // Update product details
     $product->name = $request->name;
     $product->description = $request->description;
     $product->price = $request->price;
-    $product->category_id = $request->category_id; // Assign category_id, not category
+    $product->category_id = $request->category_id;
     $product->save();
 
-    // Redirect with success message
     return redirect()->route('products.index')->with('success', 'Product updated successfully.');
 }
 

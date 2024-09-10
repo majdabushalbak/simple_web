@@ -2,8 +2,7 @@
 
 <div class="card text-center h-100 flex-grow-1" onclick="location.href='{{ route('products.show', $product) }}'">
     <!-- Image with fixed size -->
-    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
-        class="card-img-top">
+    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"class="card-img-top">
     <div class="card-body">
         <h5 class="card-title mb-4">{{ $product->name }}</h5>
         <p class="card-text">{{ $product->price }} <i class="fa-solid fa-shekel-sign"></i> </p>
