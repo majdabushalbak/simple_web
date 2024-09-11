@@ -37,7 +37,9 @@ Route::middleware('auth')->group(function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');
 Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
 Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
@@ -46,6 +48,7 @@ Route::delete('/products/{product}', [ProductController::class, 'destroy'])->nam
 
 Route::middleware(['admin'])->group(function () {
     // Only accessible by admin users
+    Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
     Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
     Route::get('categories/create', [CategoryController::class, 'create'])->name('categories.create');
     Route::post('categories', [CategoryController::class, 'store'])->name('categories.store');

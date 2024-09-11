@@ -22,7 +22,7 @@ class ProductsSeeder extends Seeder
                     'category_id' => 2,
                     'created_at' => now(),
                     'updated_at' => now(),
-                    'image' => 'lALDxRCWzpLPsAkWJqjxRA9yGomAq3rkOhOBgYgT.jpg',
+                    'image' => 'image\M5owoBwKjJsNPNTAwAltw9bQoRDi2s2XrDF1Nhpn.png',
                 ],
                 [
                     'id' => null,
@@ -32,7 +32,7 @@ class ProductsSeeder extends Seeder
                     'category_id' => 2,
                     'created_at' => now(),
                     'updated_at' => now(),
-                    'image' => 'ATpVrUfMiWMNuWWrw9olK4ZeOXY4Ko9fqH5KJcsY.jpg',
+                    'image' => 'image\QbVb04OyUk4REGwZqJi32jh8vPZrczlWJ01KbdEx.png',
                 ]
             ]);
         }
