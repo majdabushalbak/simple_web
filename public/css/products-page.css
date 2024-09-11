@@ -9,11 +9,14 @@
     background: white;
 
     /*box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;*/
-    border: 1px solid rgba(99, 99, 99, 0.2);
+
     display: flex;
     flex-direction: column;
     align-items: center;
     /* Center align the card content */
+}
+.border-light {
+    border: 1px solid rgba(99, 99, 99, 0.25);
 }
 
 .card:hover {
@@ -27,6 +30,8 @@
     border-radius: 0%;
     /* Make the image circular */
     object-fit: cover;
+    background-color: whitesmoke;
+
     /* Ensure the image covers the area without stretching */
 
     /* Add some margin to separate from the card edges */
