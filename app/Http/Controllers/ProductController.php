@@ -109,7 +109,7 @@ public function update(Request $request, Product $product)
     {
         // Delete image from storage
         if ($product->image && $product->image !== 'default.jpg') {
-            Storage::delete('public/images/' . $product->image);
+            Storage::delete('public/storage/' . $product->image);
         }
 
 
