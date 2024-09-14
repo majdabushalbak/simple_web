@@ -18,11 +18,32 @@
                     <div class="card-footer text-end">
                         <a href="{{ route('categories.show', $category) }}" class="btn btn-info btn-sm">View</a>
                         <a href="{{ route('categories.edit', $category) }}" class="btn btn-warning btn-sm">Edit</a>
-                        <form action="{{ route('categories.destroy', $category) }}" method="POST" class="d-inline">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                        </form>
+                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $category->id }}">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delete Confirmation Modal -->
+            <div class="modal fade" id="deleteModal-{{ $category->id }}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteModalLabel">تأكيد الحذف</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            عند حذف الفئة، يتم حذف جميع المنتجات المتعلقة بها.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                            <form action="{{ route('categories.destroy', $category) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">حذف</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
