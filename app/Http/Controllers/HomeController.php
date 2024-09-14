@@ -9,8 +9,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // Retrieve 5 random products
-        $randomProducts = Product::inRandomOrder()->take(5)->get();
+        // Retrieve 4 random products
+        $randomProducts = Product::inRandomOrder()->take(4)->get();
 
         // Pass the random products to the view
         return view('home', ['randomProducts' => $randomProducts]);
