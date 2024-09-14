@@ -9,10 +9,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // Retrieve 5 random product IDs
-        $randomProductIds = Product::inRandomOrder()->take(5)->pluck('id');
+        // Retrieve 5 random products
+        $randomProducts = Product::inRandomOrder()->take(5)->get();
 
-        // Pass the random IDs to the view
-        return view('home', ['randomProductIds' => $randomProductIds]);
+        // Pass the random products to the view
+        return view('home', ['randomProducts' => $randomProducts]);
     }
 }
