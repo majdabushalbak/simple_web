@@ -146,3 +146,19 @@ li .user:hover {
 ul.dropdown-menu {
     left: -32px !important;
 }
+
+.home-img {
+    object-fit: cover;
+    object-position: 0px 90%;
+    width: 100vw;
+    height: 60vh;
+    margin-bottom: 10vh;
+}
+
+.layer {
+    background-color: rgba(255, 255, 255, 0.4);
+
+    backdrop-filter: blur(5px);
+    height: 100%;
+    width: 100%;
+}

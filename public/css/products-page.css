@@ -1,5 +1,6 @@
 .card {
     width: auto;
+
     /* Set a fixed width for the card */
     border: none;
     border-radius: 0px;
@@ -26,6 +27,8 @@
 
 /* Circular Image with Fixed Size */
 .card-img-top {
+    min-height: 20vw;
+
     /* Set a fixed height for the image */
     border-radius: 0%;
     /* Make the image circular */
