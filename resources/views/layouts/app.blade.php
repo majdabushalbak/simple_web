@@ -88,11 +88,11 @@
     </nav>
 
     {{-- page content--}}
-    <div class="page-container  mx-4 mx-lg-5 mt-5">
+  
+
+    <div class=" {{ request()->is('/') ? '' : 'page-container mx-4 mx-lg-5 mt-5' }} ">
         @yield('content')
     </div>
-
-
 
 
     <footer class="px-4 px-lg-5 mt-5  w-100    ">
