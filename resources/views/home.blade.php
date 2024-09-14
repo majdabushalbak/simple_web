@@ -25,7 +25,8 @@
                             @endforeach
                          </div>
                      @endif
-            <a href="{{ route('products.index') }}" class="btn btn-primary btn-lg">استعرض المنتجات</a>
+                    <div class="d-flex justify-content-center"> <button onclick="location.href='{{ route('products.index') }}'" class="button-28 mx-auto my-5" role="button">استعرض المنتجات</button></div>
+            
                   </div>
     </div>
 @endsection
