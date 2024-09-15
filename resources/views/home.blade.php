@@ -6,9 +6,13 @@
 <link href="{{   asset('css/products-page.css') }}" rel="stylesheet">
     <div >
        
-                <img class="home-img" src="{{ URL('/images/pexels-cottonbro-9811639.jpg') }}" />
-                
-     <div class="layer"></div >
+               
+               
+                <div class="my-cover mb-3 mb-md-5">
+                    
+                    
+                    <div class="title h1 pb-5 m-0">متعة خالصة في كل قضمة. مع النّور  🇵🇸 </div>
+                  </div> 
           
     
 
@@ -25,8 +29,10 @@
                             @endforeach
                          </div>
                      @endif
-                    <div class="d-flex justify-content-center"> <button onclick="location.href='{{ route('products.index') }}'" class="button-28 mx-auto my-5" role="button">استعرض المنتجات</button></div>
+                   
             
                   </div>
+                  <div class="d-flex justify-content-center align-items-center mt-3 mt-md-4 mt-lg-5" style="background-color:whitesmoke; margin-bottom: -3rem; height:25dvh;
+"> <button onclick="location.href='{{ route('products.index') }}'" class="button-28 mx-auto my-5" role="button">استعرض المنتجات</button></div>
     </div>
 @endsection
