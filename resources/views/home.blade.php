@@ -11,7 +11,8 @@
                 <div class="my-cover mb-3 mb-md-5">
                     
                     
-                    <div class="title h1 pb-5 m-0">متعة خالصة في كل قضمة. مع النّور  🇵🇸 </div>
+                    <div class="title h1 pb-5 m-0">متعة خالصة في كل قضمة. مع النّور <span>  
+                      <img class="ps" src="{{ URL('/images/ps.png') }}" alt="PS"/></span> </div>
                   </div> 
           
     
